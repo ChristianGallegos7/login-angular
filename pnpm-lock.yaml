@@ -35,6 +35,9 @@ importers:
       rxjs:
         specifier: ~7.8.0
         version: 7.8.1
+      sweetalert2:
+        specifier: ^11.12.4
+        version: 11.12.4
       tslib:
         specifier: ^2.3.0
         version: 2.6.3
@@ -3574,6 +3577,9 @@ packages:
   supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+
+  sweetalert2@11.12.4:
+    resolution: {integrity: sha512-ZSpyaLbAmn4b7xjnV9x9BFD1UOrCAhIzm1D8dZ443kGxtVKqbTIA5SgXs4xeEtmFfEXUyC3RBgpSlu1AXmCiHA==}
 
   symbol-observable@4.0.0:
     resolution: {integrity: sha512-b19dMThMV4HVFynSAM1++gBHAbk2Tc/osgLIBZMKsyqh34jb2e8Os7T6ZW/Bt3pJFdBTd2JwAnAAEQV7rSNvcQ==}
@@ -7875,6 +7881,8 @@ snapshots:
       has-flag: 4.0.0
 
   supports-preserve-symlinks-flag@1.0.0: {}
+
+  sweetalert2@11.12.4: {}
 
   symbol-observable@4.0.0: {}
 

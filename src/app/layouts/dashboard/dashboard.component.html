@@ -1,0 +1,32 @@
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <ul>
+      <li>
+        <a routerLink="jobs" routerLinkActive="active-link">Ofertas disponibles</a>
+      </li>
+      <li>
+        <a routerLink="account" routerLinkActive="active-link">Cuenta</a>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- Contenido principal, incluyendo el navbar -->
+  <div class="main-content">
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <!-- Logo aquí -->
+        <img src="path-to-logo/logo.png" alt="Logo">
+      </div>
+      <div class="navbar-actions">
+        <!-- Botón a la derecha -->
+        <button (click)="logout()">Cerrar Sesión</button>
+      </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="content-area">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
