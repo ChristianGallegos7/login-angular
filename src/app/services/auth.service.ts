@@ -18,7 +18,10 @@ export class AuthService {
   public currentUser = computed(() => this._currentUser());
 
   constructor() { }
-
+  isAuthenticated(): boolean {
+    const token = localStorage.getItem('token');
+    return !!token;
+  }
   login(email: string, password: string): Observable<boolean> {
     const url = `${this.baseUrl}/auth/login`;
     const body = { email, password };
