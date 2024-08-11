@@ -1,15 +1,16 @@
 <div class="job-grid">
   @if (jobs.length == 0) {
-    <h1>No hay empleos diponibles</h1>
+  <h1>No hay empleos diponibles</h1>
   }@else {
-    @for (job of jobs; track $index) {
-      <div class="job-card">
-        <h3>{{ job.title }}</h3>
-        <p>{{ job.description }}</p>
-        <p>{{ job.location }}</p>
-        <p>Salario: ${{ job.salary }}</p>
-        <button>Apply Now</button>
-      </div>
-      }
+  @for (job of jobs; track $index) {
+  <div class="job-card">
+    <p> {{job.id}} </p>
+    <h3>{{ job.title }}</h3>
+    <p>{{ job.description }}</p>
+    <p>{{ job.location }}</p>
+    <p>Salario: ${{ job.salary }}</p>
+    <button (click)="apply(job.id)">Aplicar</button>
+  </div>
+  }
   }
 </div>
