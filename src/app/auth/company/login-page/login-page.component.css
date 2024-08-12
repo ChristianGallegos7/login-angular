@@ -1,8 +1,10 @@
 .fondo {
+    background-color: #151717;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: linear-gradient(to right bottom, #ff0000, #d2001f, #a20027, #710826, #420f1d, #370b1c, #2c0719, #230116, #300028, #390040, #36005f, #081383);
 }
 
 .title {

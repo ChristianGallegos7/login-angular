@@ -127,3 +127,53 @@
     border: 1px solid #2d79f3;
     ;
 }
+
+/* Estilo para el contenedor del formulario */
+.inputForm {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el ícono y el select */
+    background-color: #ffffff; /* Fondo blanco para el contenedor */
+    padding: 10px;
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  }
+  
+  /* Estilo para el ícono SVG */
+  .inputForm svg {
+    fill: #0056b3; /* Color del ícono */
+  }
+  
+  /* Estilo para el select */
+  select {
+    font-size: 16px;
+    padding: 8px 12px;
+    border: 1px solid #dcdcdc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Fondo gris claro */
+    color: #333; /* Color del texto */
+    appearance: none; /* Elimina el estilo predeterminado del navegador */
+    cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease; /* Transiciones suaves */
+  }
+  
+  /* Estilo para el select cuando está enfocado */
+  select:focus {
+    border-color: #0056b3; /* Borde azul cuando está enfocado */
+    background-color: #ffffff; /* Fondo blanco cuando está enfocado */
+    outline: none; /* Elimina el contorno predeterminado */
+  }
+  
+  /* Estilo para las opciones dentro del select */
+  option {
+    padding: 8px; /* Espaciado interior para las opciones */
+    background-color: #ffffff; /* Fondo blanco para las opciones */
+    color: #333; /* Color del texto para las opciones */
+  }
+  
+  /* Estilo para las opciones seleccionadas */
+  option:checked {
+    background-color: #0056b3; /* Fondo azul para la opción seleccionada */
+    color: #ffffff; /* Color del texto blanco para la opción seleccionada */
+  }
+  

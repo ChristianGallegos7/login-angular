@@ -1,0 +1,44 @@
+/* dashboard.component.css */
+
+/* Estilo para el contenedor principal del dashboard */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: linear-gradient(to right bottom, #ff0000, #d2001f, #a20027, #710826, #420f1d, #370b1c, #2c0719, #230116, #300028, #390040, #36005f, #081383);
+
+    /* Color de fondo general */
+}
+
+/* Estilo para el área principal que contiene el navbar y el contenido */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Estilo para el navbar */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    /* Color de fondo del navbar */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    padding-bottom: 20px;
+}
+
+.navbar a {
+    color: #ffffff;
+    /* Color del texto del navbar */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #f1c40f;
+}

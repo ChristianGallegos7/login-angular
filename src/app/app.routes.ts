@@ -4,29 +4,65 @@ import { AuthGuard } from './guards/auth.guard';
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'auth/login', // Redirige a 'auth/login' cuando la ruta es vacía
+        redirectTo: 'lancelot', // Redirige a 'lancelot' cuando la ruta es vacía
         pathMatch: 'full',
     },
     {
-        path: 'auth',
+        path: 'lancelot',
+        loadComponent: () =>
+            import('./layouts/auth-layout/auth-layout.component').then(
+                (c) => c.AuthLayoutComponent
+            ),
         children: [
             {
-                path: 'login',
-                loadComponent: () =>
-                    import('./auth/user/login-page/login-page.component').then(
-                        (m) => m.LoginPageComponent
-                    ),
+                path: 'user',
+                children: [
+                    {
+                        path: 'login',
+                        loadComponent: () =>
+                            import('./auth/user/login-page/login-page.component').then(
+                                (m) => m.LoginPageComponent
+                            ),
+                    },
+                    {
+                        path: 'register',
+                        loadComponent: () =>
+                            import('./auth/user/register-page/register-page.component').then(
+                                (m) => m.RegisterPageComponent
+                            ),
+                    },
+                    {
+                        path: '**', // Ruta comodín para cualquier otra ruta bajo 'user'
+                        redirectTo: 'login', // Redirige a 'login' si no se encuentra la ruta
+                    },
+                ],
             },
             {
-                path: 'register',
-                loadComponent: () =>
-                    import('./auth/user/register-page/register-page.component').then(
-                        (m) => m.RegisterPageComponent
-                    ),
+                path: 'company',
+                children: [
+                    {
+                        path: 'login',
+                        loadComponent: () =>
+                            import('./auth/company/login-page/login-page.component').then(
+                                (m) => m.LoginPageComponent
+                            ),
+                    },
+                    {
+                        path: 'register',
+                        loadComponent: () =>
+                            import('./auth/company/register-page/register-page.component').then(
+                                (m) => m.RegisterPageComponent
+                            ),
+                    },
+                    {
+                        path: '**', // Ruta comodín para cualquier otra ruta bajo 'company'
+                        redirectTo: 'login', // Redirige a 'login' si no se encuentra la ruta
+                    },
+                ],
             },
             {
-                path: '**', // Ruta comodín para cualquier otra ruta bajo 'auth'
-                redirectTo: 'login', // Redirige a 'login' si no se encuentra la ruta
+                path: '**', // Ruta comodín para cualquier otra ruta bajo 'lancelot'
+                redirectTo: 'user/login', // Redirige a 'user/login' si no se encuentra la ruta
             },
         ],
     },
@@ -61,6 +97,6 @@ export const routes: Routes = [
     },
     {
         path: '**', // Ruta comodín para cualquier otra ruta no capturada
-        redirectTo: 'auth/login', // Redirige a 'auth/login' si no se encuentra la ruta
+        redirectTo: 'lancelot/user/login', // Redirige a 'lancelot/user/login' si no se encuentra la ruta
     },
 ];

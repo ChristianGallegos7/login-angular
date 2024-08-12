@@ -65,7 +65,11 @@
                     </path>
                 </g>
             </svg>
-            <input type="text" class="input" placeholder="Enter your Province">
+            <select name="" id="">
+                @for (provincia of provinciasList; track $index) {
+                <option value="{{provincia.id}}"> {{provincia.name}} </option>
+                }
+            </select>
         </div>
 
         <!-- Teléfono -->
