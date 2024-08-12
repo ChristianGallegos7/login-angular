@@ -1,0 +1,111 @@
+.fondo {
+  background-color: #151717;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right bottom, #ff0000, #d2001f, #a20027, #710826, #420f1d, #370b1c, #2c0719, #230116, #300028, #390040, #36005f, #081383);
+}
+
+.title {
+  text-align: center;
+  color: #ffffff;
+  /* Cambia el color del título si es necesario */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 30px;
+  width: 450px;
+  border-radius: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputForm {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.inputForm svg {
+  fill: #0056b3;
+}
+
+.input {
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  background-color: #f9f9f9;
+  color: #333;
+  width: 100%;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.input:focus {
+  border-color: #0056b3;
+  background-color: #ffffff;
+  outline: none;
+}
+
+.select {
+  width: 100%;
+}
+
+.button-submit {
+  margin: 20px 0 10px 0;
+  background-color: #151717;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 10px;
+  height: 50px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-submit:hover {
+  background-color: #252727;
+}
+
+.p {
+  text-align: center;
+  color: black;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.btn {
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  gap: 10px;
+  border: 1px solid #ededef;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+  border: 1px solid #2d79f3;
+}

@@ -1,1 +1,58 @@
-<p>register-page works!</p>
+<div class="fondo">
+    <div class="form">
+        <h2 class="title">Registro de Empresa</h2>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="flex-column form-group">
+                <label for="name">Nombre de la Empresa</label>
+                <div class="inputForm">
+                    <input id="name" formControlName="name" type="text" placeholder="Nombre de la empresa"
+                        class="input" />
+                </div>
+            </div>
+
+            <div class="flex-column form-group">
+                <label for="ruc">RUC</label>
+                <div class="inputForm">
+                    <input id="ruc" formControlName="ruc" type="text" placeholder="RUC" class="input" />
+                </div>
+            </div>
+
+            <div class="flex-column form-group">
+                <label for="email">Correo Electrónico</label>
+                <div class="inputForm">
+                    <input id="email" formControlName="email" type="email" placeholder="Correo electrónico"
+                        class="input" />
+                </div>
+            </div>
+
+            <div class="flex-column form-group">
+                <label for="password">Contraseña</label>
+                <div class="inputForm">
+                    <input id="password" formControlName="password" type="password" placeholder="Contraseña"
+                        class="input" />
+                </div>
+            </div>
+
+            <div class="flex-column form-group">
+                <label for="address">Dirección</label>
+                <div class="inputForm">
+                    <input id="address" formControlName="address" type="text" placeholder="Dirección" class="input" />
+                </div>
+            </div>
+
+            <div class="flex-column form-group">
+                <label for="province">Provincia</label>
+                <div class="inputForm">
+                    <select id="province" formControlName="province" class="input">
+                        <option value="" disabled>Selecciona una provincia</option>
+                        @for (item of provinciasList; track $index) {
+                        <option value="{{item.id}}"> {{item.name}} </option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" [disabled]="registerForm.invalid" class="button-submit">Registrar</button>
+        </form>
+    </div>
+</div>

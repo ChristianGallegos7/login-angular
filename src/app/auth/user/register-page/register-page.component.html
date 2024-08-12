@@ -66,6 +66,7 @@
                 </g>
             </svg>
             <select name="" id="">
+                <option value="" disabled>Selecciona una provincia</option>
                 @for (provincia of provinciasList; track $index) {
                 <option value="{{provincia.id}}"> {{provincia.name}} </option>
                 }
