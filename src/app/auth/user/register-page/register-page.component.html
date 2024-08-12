@@ -65,10 +65,10 @@
                     </path>
                 </g>
             </svg>
-            <select name="" id="">
+            <select id="province" formControlName="province">
                 <option value="" disabled>Selecciona una provincia</option>
-                @for (provincia of provinciasList; track $index) {
-                <option value="{{provincia.id}}"> {{provincia.name}} </option>
+                @for (item of provinciasList; track $index) {
+                <option value="{{item.id}}"> {{item.name}} </option>
                 }
             </select>
         </div>

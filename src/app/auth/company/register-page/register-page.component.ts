@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProvinciasService } from '../../../services/provincias.service';
+import { EmpresaService } from '../../../services/empresa-service.service';
 
 @Component({
   selector: 'app-register-page',
@@ -11,21 +12,21 @@ import { ProvinciasService } from '../../../services/provincias.service';
 })
 export class RegisterPageComponent {
   registerForm: FormGroup;
+
   private provincias = inject(ProvinciasService);
 
   provinciasList: any = [];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private empresaService: EmpresaService) {
     this.registerForm = this.fb.group({
       name: ['', Validators.required],
       ruc: ['', [Validators.required, Validators.pattern('^[0-9]{11}$')]], // Asumiendo un RUC de 11 dígitos
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       address: ['', Validators.required],
-      province: ['', Validators.required]
+      province: ['', Validators.required],
     });
     this.obtenerProvincias();
-
   }
   obtenerProvincias() {
     this.provincias.obtenerProvincias().subscribe({
@@ -40,8 +41,14 @@ export class RegisterPageComponent {
 
   onSubmit() {
     if (this.registerForm.valid) {
-      // Lógica para manejar el envío del formulario
-      console.log(this.registerForm.value);
+      this.empresaService.register(this.registerForm.value).subscribe({
+        next: (response) => {
+          console.log('Empresa registrada:', response);
+        },
+        error: (error) => {
+          console.error('Error registrando empresa:', error);
+        },
+      });
     }
   }
 }
